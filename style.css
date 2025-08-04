@@ -324,6 +324,7 @@ h6 {
 
 p {
   margin: 0 0 var(--space-16) 0;
+  color:#000;
 }
 
 a {
@@ -444,8 +445,8 @@ pre code {
   display: block;
   width: 100%;
   padding: var(--space-8) var(--space-12);
-  font-size: var(--font-size-md);
-  line-height: 1.5;
+  font-size: 16px;
+  line-height: 28px;
   color: var(--color-text);
   background-color: var(--color-surface);
   border: 1px solid var(--color-border);
@@ -469,6 +470,8 @@ select.form-control {
   background-position: right var(--space-12) center;
   background-size: 16px;
   padding-right: var(--space-32);
+  font-size:16px;
+  line-height:28px;
 }
 
 /* Add a dark mode specific caret */
@@ -497,6 +500,7 @@ select.form-control {
   margin-bottom: var(--space-8);
   font-weight: var(--font-weight-medium);
   font-size: var(--font-size-sm);
+  color:#000;
 }
 
 .form-group {
@@ -714,7 +718,7 @@ select.form-control {
 .header {
   background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-teal-700) 100%);
   color: var(--color-white);
-  position: sticky;
+ /*  position: sticky; */
   top: 0;
   z-index: 100;
   box-shadow: var(--shadow-md);
@@ -722,6 +726,7 @@ select.form-control {
 
 .nav {
   padding: var(--space-16) 0;
+  position:static;
 }
 
 .nav-content {
@@ -870,6 +875,7 @@ select.form-control {
   border-radius: var(--radius-base);
   cursor: pointer;
   transition: all var(--duration-fast) var(--ease-standard);
+  color:#000;
 }
 
 .quiz-options label:hover {
@@ -981,6 +987,10 @@ select.form-control {
   box-shadow: var(--shadow-sm);
 }
 
+img {
+  width:100%;
+}
+
 /* Cost Calculator */
 .cost-calculator {
   display: grid;
@@ -1012,6 +1022,7 @@ select.form-control {
   justify-content: space-between;
   padding: var(--space-8) 0;
   border-bottom: 1px solid var(--color-border);
+  color:#000;
 }
 
 .cost-item.total {
@@ -1036,6 +1047,7 @@ select.form-control {
 .metric {
   display: flex;
   justify-content: space-between;
+  color:#000;
 }
 
 @media (max-width: 768px) {
@@ -1058,6 +1070,7 @@ select.form-control {
   border-radius: var(--radius-lg);
   border: 1px solid var(--color-card-border);
   box-shadow: var(--shadow-sm);
+  color:#000;
 }
 
 .eligibility-card h3 {
@@ -1091,6 +1104,10 @@ select.form-control {
 .timeline {
   position: relative;
   margin: var(--space-32) 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-32);
+  padding: 0px;
 }
 
 .timeline-item {
@@ -1107,6 +1124,7 @@ select.form-control {
   margin-right: var(--space-16);
   margin-top: var(--space-8);
   flex-shrink: 0;
+  display: none;
 }
 
 .timeline-content {
@@ -1115,22 +1133,31 @@ select.form-control {
   padding: var(--space-16);
   border-radius: var(--radius-base);
   border: 1px solid var(--color-card-border);
+  font-size:16px;
+  line-height:28px;
 }
 
 .timeline-phase {
   font-weight: var(--font-weight-bold);
   color: var(--color-primary);
   margin-bottom: var(--space-8);
+  font-size:16px;
+  line-height:28px;
 }
 
 .timeline-activities {
   margin-bottom: var(--space-8);
+  color:#000;
+  font-size:16px;
+  line-height:28px;
 }
 
 .timeline-tips {
   font-size: var(--font-size-sm);
   color: var(--color-text-secondary);
   font-style: italic;
+  font-size:16px;
+  line-height:28px;
 }
 
 /* Political Updates */
@@ -1160,7 +1187,7 @@ select.form-control {
 /* Testimonials */
 .testimonials-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: var(--space-24);
 }
 
@@ -1451,4 +1478,5 @@ html {
   .cta-offers {
     grid-template-columns: 1fr;
   }
+  
 }
