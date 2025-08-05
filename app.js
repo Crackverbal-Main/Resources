@@ -288,13 +288,13 @@ function displayTimeline() {
 window.openTool = function(toolType) {
     switch (toolType) {
         case 'comparison':
-            alert('University Comparison Tool - Coming Soon! This would allow you to compare universities side by side.');
+            //alert('University Comparison Tool - Coming Soon! This would allow you to compare universities side by side.');
             break;
         case 'gmat':
-            alert('GMAT Score Predictor - Coming Soon! This would help predict your GMAT score based on practice tests.');
+            //alert('GMAT Score Predictor - Coming Soon! This would help predict your GMAT score based on practice tests.');
             break;
         case 'timeline':
-            alert('Application Timeline Tracker - Coming Soon! This would create a personalized timeline for your applications.');
+            //alert('Application Timeline Tracker - Coming Soon! This would create a personalized timeline for your applications.');
             break;
     }
 }
