@@ -1841,3 +1841,76 @@
   .form-group:has(.form-control:focus) .form-control { border-color: var(--color-primary); box-shadow: 0 0 0 3px rgba(var(--color-teal-500-rgb), .15); }
 
   .card:is(.lift):hover { border-color: rgba(var(--color-brown-600-rgb), 0.25); }
+
+/* Success Stories – grid and cards */
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 24px;
+  width: 100%;
+  align-items: stretch;            /* ensure equal-height columns */
+}
+
+/* Make card a column-flex so content stacks predictably */
+.testimonial-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: var(--color-surface);
+  border: 1px solid var(--color-card-border);
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: var(--shadow-sm);
+}
+
+/* Keep the big quote from affecting layout */
+.testimonial-card::before {
+  position: absolute;
+  top: 8px;
+  left: 16px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Content area grows; author stays at bottom */
+.testimonial-content {
+  position: relative;
+  z-index: 1;
+  flex: 1 1 auto;
+  margin-bottom: 12px;
+}
+
+/* Footer pinned to bottom for consistent alignment */
+.testimonial-author {
+  position: relative;
+  z-index: 1;
+  margin-top: auto;
+}
+
+/* Button row in cards (if present) */
+.testimonial-card .cta-row {
+  margin-top: 12px;
+}
+
+/* Text flow: avoid vertical stacking and mid-word breaks */
+.testimonial-card p,
+.testimonial-card h4,
+.testimonial-card span {
+  word-break: normal;
+  overflow-wrap: anywhere;   /* allow natural wrapping without breaking words */
+  hyphens: auto;
+}
+
+/* Safety: if any global reset applied break-all, undo it here */
+.testimonial-card * {
+  word-break: normal;
+}
+
+/* Responsive tuning */
+@media (max-width: 768px) {
+  .testimonials-grid {
+    grid-template-columns: 1fr;  /* single column on small screens */
+    gap: 16px;
+  }
+  .testimonial-card { padding: 20px; }
+}
