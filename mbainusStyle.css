@@ -1263,14 +1263,21 @@
     margin-bottom: var(--space-16);
   }
   
-  /* Testimonials */
+  /* Testimonials – default to horizontal carousel (Webflow-safe, no HTML changes) */
   .testimonials-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 24px;
+    display: flex !important;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 20px;
     width: 100%;
     align-items: stretch;
+    padding-bottom: 8px;
+    -webkit-overflow-scrolling: touch;
   }
+  .testimonials-grid::-webkit-scrollbar { height: 0; }
+  .testimonials-grid .testimonial-card { flex: 0 0 32%; min-width: 340px; scroll-snap-align: start; }
+  @media (max-width: 1024px) { .testimonials-grid .testimonial-card { flex-basis: 48%; } }
+  @media (max-width: 768px)  { .testimonials-grid .testimonial-card { flex-basis: 86%; min-width: 280px; } }
   
   .testimonial-card {
     position: relative;
@@ -1327,6 +1334,39 @@
   .reveal.is-visible .testimonial-card:nth-child(2) { transition-delay: 140ms; }
   .reveal.is-visible .testimonial-card:nth-child(3) { transition-delay: 220ms; }
   .reveal.is-visible .testimonial-card:nth-child(4) { transition-delay: 300ms; }
+  
+  /* Testimonials Carousel (no HTML change) */
+  #success-stories .testimonials-grid.carousel {
+    display: flex !important;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 20px;
+    padding-bottom: 8px;
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  #success-stories .testimonials-grid.carousel::-webkit-scrollbar { height: 0; }
+  
+  #success-stories .testimonials-grid.carousel .testimonial-card {
+    flex: 0 0 32%;
+    min-width: 340px;
+    scroll-snap-align: start;
+  }
+  
+  @media (max-width: 1024px) {
+    #success-stories .testimonials-grid.carousel .testimonial-card { flex-basis: 48%; }
+  }
+  @media (max-width: 768px) {
+    #success-stories .testimonials-grid.carousel .testimonial-card { flex-basis: 86%; min-width: 280px; }
+  }
+  
+  /* Carousel controls (optional) */
+  #success-stories .carousel-nav { display: flex; justify-content: center; align-items: center; gap: 12px; margin-top: 16px; }
+  #success-stories .carousel-btn { display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: 9999px; border: 1px solid rgba(var(--brand-primary-rgb), .25); background: var(--brand-white); color: var(--color-text); box-shadow: var(--shadow-sm); cursor: pointer; transition: transform var(--duration-fast) var(--ease-standard), box-shadow var(--duration-fast) var(--ease-standard); }
+  #success-stories .carousel-btn:hover { transform: translateY(-1px); box-shadow: var(--shadow-md); }
+  #success-stories .carousel-dots { display: flex; gap: 8px; }
+  #success-stories .carousel-dot { width: 8px; height: 8px; border-radius: 50%; background: rgba(var(--brand-primary-rgb), .25); transition: background var(--duration-fast) var(--ease-standard), transform var(--duration-fast) var(--ease-standard); }
+  #success-stories .carousel-dot.is-active { background: var(--brand-primary); transform: scale(1.2); }
   
   /* Career Stats */
   .career-stats {
