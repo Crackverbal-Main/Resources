@@ -118,7 +118,24 @@
     --container-lg: 1024px;
     --container-xl: 1280px;
   }
-  
+  /* === Light-section text reset (place after your CSS) === */
+.section :where(h1,h2,h3,h4,h5,h6,p,li,span,label,small,strong,em,td,th) {
+  color: var(--color-text) !important; /* resolves accidental white text */
+}
+.section a:not(.btn) {
+  color: var(--color-primary) !important; /* make links visible on light bg */
+}
+.eligibility-card,
+.update-card,
+.tool-card,
+.calculator-inputs,
+.calculator-result,
+.timeline-content,
+.metric,
+.cost-item {
+  color: var(--color-text) !important;
+}
+
   /* Dark mode colors */
   @media (prefers-color-scheme: dark) {
     :root {
