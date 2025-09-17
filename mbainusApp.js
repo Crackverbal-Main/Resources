@@ -1,3 +1,59 @@
+(function () {
+  var root = document.getElementById('application-timeline');
+  if (!root) return;
+
+  const items = [
+    {
+      title: '12-15 months before',
+      body: 'Self-reflection, career goal setting, initial research',
+      tip:  'Research visa requirements, start financial planning'
+    },
+    {
+      title: '10-12 months before',
+      body: 'GMAT/GRE preparation, school research, networking',
+      tip:  'Consider time zones for online tests, prep during work hours'
+    },
+    {
+      title: '8-10 months before',
+      body: 'Take GMAT/GRE, finalize school list, start essays',
+      tip:  'Focus on unique experiences that differentiate from other Indian applicants'
+    },
+    {
+      title: '6-8 months before',
+      body: 'Essay writing, recommender selection, resume crafting',
+      tip:  'Highlight leadership in diverse teams, international exposure'
+    },
+    {
+      title: '4-6 months before',
+      body: 'Complete applications, request transcripts, practice interviews',
+      tip:  'Prepare for potential visa delays, have backup plans'
+    },
+    {
+      title: '2-4 months before',
+      body: 'Submit applications, interview preparation',
+      tip:  'Practice interviews in English, prepare for cultural questions'
+    },
+    {
+      title: '1-2 months before',
+      body: 'Interview rounds, scholarship applications',
+      tip:  'Research current political climate impact on visas'
+    },
+    {
+      title: 'Application deadline',
+      body: 'Final submissions, follow-up communications',
+      tip:  'Consider multiple round applications for better chances'
+    }
+  ];
+
+  root.classList.add('timeline-grid');
+  root.innerHTML = items.map(i => `
+    <div class="timeline-card">
+      <h4 class="timeline-title">${i.title}</h4>
+      <p class="timeline-body">${i.body}</p>
+      <p class="timeline-tip"><strong>Tips for Indians:</strong> ${i.tip}</p>
+    </div>
+  `).join('');
+})();
 // Sticky glass nav on scroll + parallax hero + page loader hide
 (function(){
   var header = document.querySelector('.header.glass-nav');
