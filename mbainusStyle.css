@@ -135,6 +135,35 @@
 .cost-item {
   color: var(--color-text) !important;
 }
+#application-timeline.timeline-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(280px, 1fr));
+  gap: 28px;
+}
+.timeline-card {
+  background: #fff;
+  border: 1px solid rgba(30,115,190,.18);
+  border-radius: 12px;
+  padding: 20px 22px;
+  box-shadow: 0 1px 0 rgba(0,0,0,.02);
+}
+.timeline-title {
+  margin: 0 0 8px;
+  font-weight: 700;
+  color: #1E73BE;              /* same blue as your brand */
+}
+.timeline-body {
+  margin: 0 0 10px;
+  color: var(--color-text, #111);
+}
+.timeline-tip {
+  margin: 0;
+  color: rgba(17,24,39,.6);    /* subtle grey like screenshot */
+  font-style: italic;
+}
+@media (max-width: 860px) {
+  #application-timeline.timeline-grid { grid-template-columns: 1fr; }
+}
 
   /* Dark mode colors */
   @media (prefers-color-scheme: dark) {
