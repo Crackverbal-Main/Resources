@@ -860,6 +860,10 @@
     color: var(--color-text);
     line-height: 1.2;
   }
+  /* Ensure body text in standard sections remains visible on light backgrounds */
+  .section:not(.cta-section) p,
+  .section:not(.cta-section) li,
+  .section:not(.cta-section) span { color: var(--color-text); }
   
   /* Quiz Section */
   .quiz-container {
@@ -1593,6 +1597,15 @@
   /* Smooth scrolling */
   html {
     scroll-behavior: smooth;
+  }
+  html { color-scheme: light; }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --color-background: var(--brand-white);
+      --color-surface: var(--brand-white);
+      --color-text: var(--brand-black);
+      --color-text-secondary: var(--neutral-600);
+    }
   }
   
   /* Responsive improvements */
