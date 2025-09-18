@@ -1300,6 +1300,7 @@
     box-shadow: var(--shadow-sm);
     overflow: hidden;
     transition: transform var(--duration-normal) var(--ease-standard), box-shadow var(--duration-normal) var(--ease-standard), border-color var(--duration-normal) var(--ease-standard);
+  min-height: 280px;
   }
 
   .testimonial-card::after {
@@ -1325,7 +1326,7 @@
   
   .testimonial-content { position: relative; z-index: 1; flex: 1 1 auto; margin-bottom: 12px; padding-top: var(--space-20); }
   
-  .testimonial-author { position: relative; z-index: 1; margin-top: auto; }
+.testimonial-author { position: relative; z-index: 1; margin-top: auto; }
   .testimonial-author h4 { color: var(--color-text); margin-bottom: var(--space-4); }
   
   .testimonial-author span { color: var(--color-text-secondary); font-size: var(--font-size-sm); }
@@ -1335,7 +1336,10 @@
   .testimonial-card span { word-break: normal; overflow-wrap: anywhere; hyphens: auto; }
   .testimonial-card * { word-break: normal; }
 
-  .testimonial-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-lg); border-color: rgba(var(--brand-primary-rgb), 0.24); }
+.testimonial-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-lg); border-color: rgba(var(--brand-primary-rgb), 0.24); }
+
+/* Ensure CTAs align at bottom uniformly */
+.testimonial-card .cta-row { margin-top: auto; }
 
   .reveal .testimonial-card { opacity: 0; transform: translateY(14px) scale(.98); }
   .reveal.is-visible .testimonial-card { opacity: 1; transform: none; transition: opacity 700ms var(--ease-standard), transform 700ms var(--ease-standard); }
@@ -1436,13 +1440,13 @@
   }
   
   .salary-range {
-    display: inline-block;
-    background: var(--color-primary);
-    color: var(--color-white);
-    padding: var(--space-4) var(--space-12);
-    border-radius: var(--radius-full);
-    font-size: var(--font-size-sm);
-    font-weight: var(--font-weight-medium);
+  display: inline-block;
+  background: var(--color-primary);
+  color: #ffffff !important;
+  padding: var(--space-4) var(--space-12);
+  border-radius: var(--radius-full);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
   }
   
   /* Tools Section */
@@ -1500,19 +1504,25 @@
   }
   
   .crackverbal-stats .stat {
-    text-align: center;
+  text-align: center;
   }
   
   .crackverbal-stats h3 {
     color: var(--color-white);
     font-size: var(--font-size-3xl);
     margin-bottom: var(--space-8);
+  display: inline-block;
   }
   
   .crackverbal-stats p {
     color: rgba(255, 255, 255, 0.9);
     margin: 0;
   }
+
+/* Footer stats icons */
+.crackverbal-stats .stat:nth-child(1) h3::before { content:"🎓"; display:block; font-size:22px; margin-bottom:6px; }
+.crackverbal-stats .stat:nth-child(2) h3::before { content:"📊"; display:block; font-size:22px; margin-bottom:6px; }
+.crackverbal-stats .stat:nth-child(3) h3::before { content:"✅"; display:block; font-size:22px; margin-bottom:6px; }
   
   .cta-offers {
     display: grid;
